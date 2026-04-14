@@ -1,0 +1,6 @@
+{
+  "name": "PhishGuard AI",
+  "description": "AI-powered Phishing Email Detector with manual analysis and auto inbox monitoring.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}

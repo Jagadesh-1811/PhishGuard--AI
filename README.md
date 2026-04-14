@@ -46,19 +46,12 @@ To allow PhishGuard AI to securely access your Gmail:
 # Install dependencies
 npm install
 
-# Start Ollama in another terminal
-ollama serve
 
 # Run the dev server
 npm run dev
 ```
 Open: http://localhost:3000
 
-## Environment Variables (.env)
-```
-GEMINI_API_KEY="optional-if-using-gemini"
-OLLAMA_URL="http://localhost:11434/api/generate"
-```
 
 ## Security Note
 - Your Gmail App Password is used only for the current session and is not stored permanently for your safety.

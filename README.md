@@ -52,6 +52,29 @@ npm run dev
 ```
 Open: http://localhost:3000
 
+## Technical Interface
+PhishGuard AI features a premium "Digital Naturalism" interface designed for maximum technical clarity and forensic depth.
+
+### Forensic Analysis
+Our heuristic engine deconstructs emails into their core components:
+- **Linguistic Sentiment**: Identifying social engineering patterns.
+- **Header Integrity**: Real-time verification of DKIM/SPF signatures.
+- **URL Deconstruction**: Technical deconstruction of malicious landing sites.
+
+![Forensic Analysis](assets/card1.png)
+*Fig 1: Real-time URL heuristic deconstruction.*
+
+### Intelligence Dashboard
+The "Bento-Tab" layout allows for seamless transitions between manual scanning and live inbox surveillance.
+
+![Intelligence Dashboard](assets/card2.png)
+*Fig 2: Metadata integrity verification and security scoring.*
+
+### Forensic Logic
+Linguistic sentiment analysis powered by local LLMs determines the psychological weight of email content.
+
+![Forensic Logic](assets/methodology3.png)
+*Fig 3: Neural topography of the gpt-oss sentiment engine.*
 
 ## Security Note
 - Your Gmail App Password is used only for the current session and is not stored permanently for your safety.

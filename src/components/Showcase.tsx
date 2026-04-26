@@ -48,7 +48,7 @@ export const Showcase: React.FC = () => {
             >
               <div className="space-y-12">
                 <div className="flex justify-between items-start">
-                  <CatalogLabel figure={card.fig} className="static !p-0 !bg-transparent !border-none !backdrop-blur-none" />
+                  <CatalogLabel figure={card.fig} className="static p-0! bg-transparent! border-none! backdrop-blur-none!" />
                   <div className="flex gap-2">
                     {card.tags.map(tag => (
                       <span key={tag} className="text-[8px] font-mono uppercase tracking-widest px-2 py-1 border border-stone-white/10 rounded-full opacity-40 group-hover:opacity-100 transition-opacity">

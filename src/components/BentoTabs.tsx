@@ -204,7 +204,7 @@ export const BentoTabs: React.FC = () => {
     <section id="scanner" className="py-24 px-6 bento-grid">
       <div className="max-w-7xl mx-auto">
         {/* Folder Navigation */}
-        <div className="flex flex-wrap items-end -space-x-1 mb-[-1px] relative z-10">
+        <div className="flex flex-wrap items-end -space-x-1 -mb-px relative z-10">
           {tabs.map((tab, idx) => {
             const isActive = activeTab === tab.id;
             return (
@@ -285,7 +285,7 @@ export const BentoTabs: React.FC = () => {
                                  {result.risk} RISK
                                </span>
                              </div>
-                             <p className="text-xl serif italic mb-6 break-words">"{result.reason}"</p>
+                             <p className="text-xl serif italic mb-6 wrap-break-word">"{result.reason}"</p>
                              {result.signs && (
                                <ul className="space-y-2">
                                  {result.signs.map((sign: string, i: number) => (
@@ -387,7 +387,7 @@ export const BentoTabs: React.FC = () => {
 
                         <div className="h-3 rounded-full bg-stone-white/5 overflow-hidden">
                           <div
-                            className="h-full rounded-full bg-gradient-to-r from-red-500 via-amber-400 to-acid-lime transition-all"
+                            className="h-full rounded-full bg-linear-to-r from-red-500 via-amber-400 to-acid-lime transition-all"
                             style={{ width: `${securityScore.score}%` }}
                           />
                         </div>
@@ -486,7 +486,7 @@ export const BentoTabs: React.FC = () => {
                               </div>
                               <div className="p-4 rounded-xl bg-stone-black/40 border border-stone-white/5">
                                 <p className="text-[10px] font-mono uppercase tracking-widest opacity-40">Model</p>
-                                <p className="mt-2 text-sm text-stone-white/70 break-words">{localSnapshot.model}</p>
+                                <p className="mt-2 text-sm text-stone-white/70 wrap-break-word">{localSnapshot.model}</p>
                               </div>
                               <div className="p-4 rounded-xl bg-stone-black/40 border border-stone-white/5">
                                 <p className="text-[10px] font-mono uppercase tracking-widest opacity-40">Mode</p>
@@ -494,7 +494,7 @@ export const BentoTabs: React.FC = () => {
                               </div>
                             </div>
 
-                            <p className="text-xl serif italic break-words">"{localSnapshot.summary}"</p>
+                            <p className="text-xl serif italic wrap-break-word">"{localSnapshot.summary}"</p>
 
                             {localSnapshot.signals.length > 0 && (
                               <ul className="space-y-2">

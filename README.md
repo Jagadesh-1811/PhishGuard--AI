@@ -1,85 +1,70 @@
-# PhishGuard AI — Phishing Email Detector
+# PhishGuard AI — Forensic Phishing Intelligence
 
-## What this app does
-PhishGuard AI is an intelligent tool that uses local AI models (via Ollama) to identify phishing attempts in emails. It offers two powerful modes:
+PhishGuard AI is a high-performance, local-first phishing detection suite. It combines the power of local Large Language Models (via Ollama) with deterministic heuristic analysis to provide a comprehensive defense against modern email-based threats.
 
-### Mode 1 — Manual Analysis
-Copy any suspicious email you've received and paste its details (sender, subject, and body) into the analysis form. PhishGuard AI will evaluate the content and provide a verdict (SAFE or PHISHING), a risk level, and a list of identified phishing signs.
+##  Core Capabilities
 
-### Mode 2 — Auto Inbox Monitor
-Connect your Gmail account directly to PhishGuard AI. The app will automatically check your unread emails every few minutes. If a phishing attempt is detected, it will:
-1. Log the detection in the live dashboard.
-2. Send an immediate warning email to your Gmail address, alerting you not to interact with the suspicious message.
+### 1. Manual Forensic Deconstruction
+Directly analyze suspicious email headers and bodies. Our local `gpt-oss` model performs deep linguistic analysis to identify social engineering tactics, coercive language, and authoritative impersonation.
+- **Verdict Engine**: Real-time classification (SAFE vs PHISHING).
+- **Risk Assessment**: Immediate tiering (LOW, MEDIUM, HIGH).
+- **Signal Tracking**: Itemized list of detected threat indicators.
 
-## Setup Steps
+### 2. Live Inbox Surveillance
+Establish an encrypted bridge to your Gmail inbox. PhishGuard AI monitors unread correspondence in the background without sending any data to the cloud.
+- **Auto-Monitoring**: Polling-based scan of unread messages.
+- **Active Response**: Automatically sends warning alerts to your inbox when a threat is identified.
+- **Security Logs**: A real-time audit trail of all scanned emails and their verdicts.
 
-### Step 1: Install Ollama
-1. Download and install Ollama from [ollama.ai](https://ollama.ai)
-2. Run: `ollama pull gpt-oss:120b-cloud` (or another model like `mistral`, `neural-chat`, `llama2`)
-3. Start Ollama: `ollama serve`
-4. This will run on `http://localhost:11434`
+### 3. Weighted Security Scoring
+The Intelligence Dashboard features a weighted scoring engine that converts complex model outputs into a single, readable metric (0-100).
+- **Impact Analysis**: See exactly which factors (Urgent Language, Financial Triggers, Credential Bait) are driving the risk score.
+- **Local Heuristics**: Secondary browser-side verification for offline reliability.
 
-### Step 2: Get Gmail App Password (for Auto Monitor)
-To allow PhishGuard AI to securely access your Gmail:
-1. Go to [myaccount.google.com](https://myaccount.google.com)
-2. Navigate to **Security**
-3. Ensure **2-Step Verification** is turned ON
-4. Search for **"App Passwords"**
-5. Create a new app password (select "Mail" and "Other (Custom name)" like "PhishGuard")
-6. Copy the 16-character password provided
-7. Enter this password in the "Auto Inbox Monitor" section of the app
-
-## Tech Stack
-- **Frontend:** React (TypeScript) with Vite
-- **Backend:** Node.js with Express and TypeScript
-- **AI:** Ollama (Local LLM - gpt-oss:120b-cloud)
-- **Email Protocols:** IMAP (for reading) and SMTP (for sending alerts)
-
-## Install and Run
+## Setup & Deployment
 
 ### Prerequisites
-- Node.js (v18+)
-- Ollama installed and running
+- **Node.js** (v18+)
+- **Ollama** installed and running
 
-### Steps
+### Step 1: Initialize Local AI
+1. Download Ollama from [ollama.ai](https://ollama.ai).
+2. Pull the forensic model:
+   ```bash
+   ollama pull gpt-oss:120b-cloud
+   ```
+3. Ensure the server is active:
+   ```bash
+   ollama serve
+   ```
+
+### Step 2: Configure Gmail Access (Optional)
+To enable the **Live Monitor**, you must generate a Google App Password:
+1. Navigate to [myaccount.google.com](https://myaccount.google.com) > Security.
+2. Enable **2-Step Verification**.
+3. Search for **"App Passwords"** and generate one for PhishGuard.
+4. Use this 16-character token in the "Live Monitor" tab.
+
+### Step 3: Launch Application
 ```bash
 # Install dependencies
 npm install
 
-
-# Run the dev server
+# Start development environment (Frontend + Backend)
 npm run dev
 ```
-Open: http://localhost:3000
+Dashboard available at: `http://localhost:3000`
 
-## Technical Interface
-PhishGuard AI features a premium "Digital Naturalism" interface designed for maximum technical clarity and forensic depth.
+## Technology Stack
+- **Frontend**: React 19, TypeScript, Vite, Tailwind CSS 4, Framer Motion.
+- **Backend**: Node.js, Express, TSX.
+- **Inference**: Ollama (gpt-oss:120b-cloud).
+- **Protocols**: IMAP (Surveillance) & SMTP (Alerts).
 
-### Forensic Analysis
-Our heuristic engine deconstructs emails into their core components:
-- **Linguistic Sentiment**: Identifying social engineering patterns.
-- **Header Integrity**: Real-time verification of DKIM/SPF signatures.
-- **URL Deconstruction**: Technical deconstruction of malicious landing sites.
+## Privacy & Security
+- **Zero Cloud Footprint**: All AI inference happens on your local hardware.
+- **Ephemeral Credentials**: App Passwords are used solely for session handshakes and are never persisted to a database.
+- **Data Sovereignty**: Analyzed email content is processed in-memory and discarded.
 
-![Forensic Analysis](assets/card1.png)
-*Fig 1: Real-time URL heuristic deconstruction.*
-
-### Intelligence Dashboard
-The "Bento-Tab" layout allows for seamless transitions between manual scanning and live inbox surveillance.
-
-![Intelligence Dashboard](assets/card2.png)
-*Fig 2: Metadata integrity verification and security scoring.*
-
-### Forensic Logic
-Linguistic sentiment analysis powered by local LLMs determines the psychological weight of email content.
-
-![Forensic Logic](assets/methodology3.png)
-*Fig 3: Neural topography of the gpt-oss sentiment engine.*
-
-## Security Note
-- Your Gmail App Password is used only for the current session and is not stored permanently for your safety.
-- Ollama runs locally, so no data is sent to external servers.
-- Model runs entirely on your machine - full privacy and control.
-
-## Repository
-GitHub: https://github.com/Jagadesh-1811/phisingguradai
+---
+Developed by [Jagadesh](https://github.com/Jagadesh-1811)
